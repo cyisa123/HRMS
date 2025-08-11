@@ -25,7 +25,7 @@ export default function Main() {
 
   useEffect(() => {
     axios
-      .get("https://hrms-acsdsa-api-7acb9bf188ac.herokuapp.com//api/getstaff")
+      .get("https://hrms-acsdsa-api-7acb9bf188ac.herokuapp.com/api/getstaff")
 
       .then((res) => {
         console.log(res);
@@ -44,7 +44,7 @@ export default function Main() {
   }, []);
   const handleDelete = (id) => {
     axios
-      .delete("https://hrms-acsdsa-api-7acb9bf188ac.herokuapp.com//api/deletestaff/" + id)
+      .delete("https://hrms-acsdsa-api-7acb9bf188ac.herokuapp.com/api/deletestaff/" + id)
       .then((res) => {
         console.log(res);
         location.reload();
