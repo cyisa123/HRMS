@@ -23,7 +23,7 @@ export default function Edit() {
 
 
   useEffect(() =>{
-    axios.get("http://localhost:2000/post")
+    axios.get("https://hrms-acsdsa-api-7acb9bf188ac.herokuapp.com/post")
     .then((res) =>{
       setPost(res.data.result);
       console.log(res.data);
@@ -40,7 +40,7 @@ export default function Edit() {
 
   const handleUpdate = (e) => {
     e.preventDefault();
-    axios.post("http://localhost:2000/api/staff", values)
+    axios.post("https://hrms-acsdsa-api-7acb9bf188ac.herokuapp.com/api/staff", values)
     .then(() => {
       alert("Staff Added successfully");
       navidate('/');

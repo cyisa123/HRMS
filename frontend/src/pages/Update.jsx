@@ -22,7 +22,7 @@ export default function Edit() {
 
 
   useEffect(() => {
-    axios.get("http://localhost:2000/api/getstaff/" + id)
+    axios.get("https://hrms-acsdsa-api-7acb9bf188ac.herokuapp.com/api/getstaff/" + id)
       .then((res) => {
         const employeeData = res.data.result[0];
         const formatDate = (dateString) => {
@@ -44,7 +44,7 @@ export default function Edit() {
   
   const handleSubmit = (e) => {
     e.preventDefault();    
-    axios.put("http://localhost:2000/update/" + id, values)
+    axios.put("https://hrms-acsdsa-api-7acb9bf188ac.herokuapp.com/update/" + id, values)
       .then(() => {
         alert("Data updated successfully");
         navigate("/")

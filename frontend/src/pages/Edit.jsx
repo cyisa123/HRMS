@@ -21,7 +21,7 @@ export default function Edit() {
     post:""
   });
   useEffect(() =>{
-    axios.get("http://localhost:2000/post")
+    axios.get("https://hrms-acsdsa-api-7acb9bf188ac.herokuapp.com/post")
     .then((res) =>{
       setPost(res.data.result);
       console.log(res.data);
@@ -29,7 +29,7 @@ export default function Edit() {
   })
     
   useEffect(() => {
-    axios.get(`http://localhost:2000/api/getstaff/${id}`).then((res) => {
+    axios.get(`https://hrms-acsdsa-api-7acb9bf188ac.herokuapp.com/api/getstaff/${id}`).then((res) => {
       const employeeData = res.data.result[0];
       const formatDate = (dateString) => {
         const date = new Date(dateString);
@@ -51,7 +51,7 @@ export default function Edit() {
   const handleUpdate = (e) => {
     e.preventDefault();
     axios
-      .put(`http://localhost:2000/api/updatestaff/${id}`, values)
+      .put(`https://hrms-acsdsa-api-7acb9bf188ac.herokuapp.com/api/updatestaff/${id}`, values)
       .then(() => {
         alert("Updated successfully");
         navidate(`/read/${id}`);

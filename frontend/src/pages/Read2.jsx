@@ -8,7 +8,7 @@ export default function Read() {
 
   useEffect(() => {
     axios
-      .get("http://localhost:2000/api/getstaff/" + id)
+      .get("https://hrms-acsdsa-api-7acb9bf188ac.herokuapp.com/api/getstaff/" + id)
       .then((res) => {
         const values = res.data.result[0];
         console.log(values);

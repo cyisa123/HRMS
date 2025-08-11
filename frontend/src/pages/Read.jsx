@@ -7,7 +7,7 @@ export default function Read() {
   const { id } = useParams();
 
   useEffect(() => {
-    axios.get(`http://localhost:2000/api/getstaff/${id}`).then((res) => {
+    axios.get(`https://hrms-acsdsa-api-7acb9bf188ac.herokuapp.com/api/getstaff/${id}`).then((res) => {
       const employeeData = res.data.result[0];
 
       employeeData.DOB = new Date(employeeData.DOB).toLocaleDateString();

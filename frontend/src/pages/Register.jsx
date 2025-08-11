@@ -8,7 +8,7 @@ const [error, setError] = useState("");
   const handleSubmit = (e) => {
     try {
       e.preventDefault();
-      axios.post("http://localhost:2000/api/fronttest", fullname).then(() => {
+      axios.post("https://hrms-acsdsa-api-7acb9bf188ac.herokuapp.com/api/fronttest", fullname).then(() => {
         alert(`Data sent!... ${fullname}`);
       })
         .catch((err) => {

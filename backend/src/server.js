@@ -1,6 +1,8 @@
 const express = require("express");
 const mysql = require("mysql2");
 const cors = require("cors");
+const dotenv = require("dotenv");
+dotenv.config();
 const session = require("express-session");
 const bcrypt = require("bcryptjs");
 const jwt = require('jsonwebtoken')
@@ -21,10 +23,10 @@ app.use(express.urlencoded({ extended: true }));
 // }))
 //DB config
 const db = mysql.createConnection({
-  host: "localhost",
-  user: "root",
-  password: "",
-  database: "hr_management_system",
+  host: process.env.DB_HOST,
+  user: process.env.DB_USER,
+  password: process.env.DB_PASSWORD,
+  database: process.env.DB_NAME,
 });
 
 //DB connection
@@ -35,6 +37,9 @@ db.connect((err) => {
   console.log("Connected to the database");
 });
 
+app.get("/", (req, res) => {
+  res.send("Welcome to HR Management System API");
+})
 //API-0: Add staff
 app.post("/api/staff", async (req, res) => {
   const {
@@ -371,7 +376,7 @@ app.post("/logout", (req, res) => {
     res.status(200).json({ message: "Logout Successfully" });
   });
 });
-app.listen(2000, () => console.log("Server is running on port 2000"));
+app.listen(process.env.PORT, () => console.log("Server is running on port 2000"));
 
 // {
 // "EmployeeID": 3,
