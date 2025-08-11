@@ -53,7 +53,7 @@ export default function Edit() {
   const getMaxDOB = () => {
     const today = new Date();
     today.setFullYear(today.getFullYear() - 18);
-    return today.toISOString().split("T")[0]; // YYYY-MM-DD
+    return today.toISOString().split("T")[0]; //
   };
   return (
     <div className="h-screen justify-center">

@@ -3,22 +3,6 @@ import axios from "axios";
 import { Link } from "react-router-dom";
 
 export default function Main() {
-  // const [employees, setEmployees] = useState([]);
-  // const [loading, setLoading] = useState(true);
-  // useEffect(() => {
-  //   axios
-  //     .get("http://localhost:3000/api/getstaff")
-  //     .then((res) => {
-  //       console.log(res.data);
-  //       setEmployees(res.data.result);
-  //       setLoading(false);
-  //     })
-  //     .catch((error) => {
-  //       console.error("Error fetching data", error);
-  //     });
-  // }, []);
-
-  // if (loading) return <div>Loading...</div>;
 
   const [employees, setEmployees] = useState([]);
   const [loading, setLoading] = useState(true);
